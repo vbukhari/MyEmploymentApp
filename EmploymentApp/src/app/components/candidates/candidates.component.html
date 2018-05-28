@@ -1,4 +1,8 @@
-{{candidates | json}}
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-users"></i>Candidates</h2>
+  </div>
+</div>
 <table *ngIf="candidates?.length > 0;else noCandidates" class="table table-striped">
   <thead class="thead-inverse">
     <tr>
@@ -17,7 +21,9 @@
       <td>{{candidate.email}}</td>
       <td>{{candidate.phone}}</td>
       <td>{{candidate.city}}, {{candidate.state}}</td>
-      <td><a href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+      <td><a href="" class="btn btn-secondary btn-sm">
+        <i class="fa fa-arrow-circle-o-right"></i>Details</a>
+      </td>
     </tr>
   </tbody>
 </table>

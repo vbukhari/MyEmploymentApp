@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
+import { FormsModule } from "@angular/forms";
 
 //Angular Fire Imports
 import { AngularFireModule } from 'angularfire2';
@@ -18,6 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CandidatesComponent } from './components/candidates/candidates.component';
+import { AddCandidateComponent } from './components/add-candidate/add-candidate.component';
 
 //Services imports
 import { CandidatesService } from './services/candidates.service';
@@ -25,7 +27,8 @@ import { CandidatesService } from './services/candidates.service';
 const appRoutes: Routes = [
   {path:'', component:DashboardComponent},
   {path:'register', component:RegisterComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'add-candidate', component:AddCandidateComponent}
 ];
 
 export const firebaseConfig = {
@@ -46,10 +49,12 @@ export const firebaseConfig = {
     RegisterComponent,
     SettingsComponent,
     PageNotFoundComponent,
-    CandidatesComponent
+    CandidatesComponent,
+    AddCandidateComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
