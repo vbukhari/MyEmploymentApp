@@ -20,7 +20,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CandidatesComponent } from './components/candidates/candidates.component';
 
 //Services imports
-//import { ClientService } from './services/client.service';
+import { CandidatesService } from './services/candidates.service';
 
 const appRoutes: Routes = [
   {path:'', component:DashboardComponent},
@@ -55,7 +55,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule
   ],
   providers: [
-    //ClientService
+    CandidatesService
   ],
   bootstrap: [AppComponent]
 })

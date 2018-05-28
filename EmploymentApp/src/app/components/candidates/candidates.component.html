@@ -1,3 +1,28 @@
-<p>
-  candidates works!
-</p>
+{{candidates | json}}
+<table *ngIf="candidates?.length > 0;else noCandidates" class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let candidate of candidates">
+      <td>{{candidate.id}}</td>
+      <td>{{candidate.firstName}} {{candidate.lastName}}</td>
+      <td>{{candidate.email}}</td>
+      <td>{{candidate.phone}}</td>
+      <td>{{candidate.city}}, {{candidate.state}}</td>
+      <td><a href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noCandidates>
+  <hr>
+  <h5>No oCandidates found!</h5>
+</ng-template>
