@@ -23,11 +23,13 @@ import { AddCandidateComponent } from './components/add-candidate/add-candidate.
 
 //Services imports
 import { CandidatesService } from './services/candidates.service';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [
-  {path:'', component:DashboardComponent},
+  {path:'', component:HomeComponent},
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
+  {path:'dashboard', component:DashboardComponent},
   {path:'add-candidate', component:AddCandidateComponent}
 ];
 
@@ -50,7 +52,8 @@ export const firebaseConfig = {
     SettingsComponent,
     PageNotFoundComponent,
     CandidatesComponent,
-    AddCandidateComponent
+    AddCandidateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
